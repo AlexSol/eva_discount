@@ -26,7 +26,7 @@ void run_test()
         const std::vector<std::string> lines{
             "product_A, 353 price., 5 et, discount 45."
         };
-        TEST_EQUAL(lines, normalize_check_line(in_lines));
+        TEST_EQUAL(lines, normalize_receipt_line(in_lines));
     }
 
     {
@@ -39,7 +39,7 @@ void run_test()
             "product_A, 353 price., 1 et, discount 91."
         };
 
-        TEST_EQUAL(lines, normalize_check_line(in_lines));
+        TEST_EQUAL(lines, normalize_receipt_line(in_lines));
     }
 
     {
@@ -49,11 +49,11 @@ void run_test()
         };
 
         const std::vector<std::string> lines{
-            "product_B, 123 price., 2 et, discount 7.",
-            "product_B, 123 price., 1 et, discount 9.",
-            "product_B, 123 price., 3 et, discount 5.",
-            "product_B, 123 price., 1 et, discount 8."
+            "product_B, 123 price., 2 et, discount 8.",
+            "product_B, 123 price., 1 et, discount 7.",
+            "product_B, 123 price., 3 et, discount 6.",
+            "product_B, 123 price., 1 et, discount 5."
         };
-        TEST_EQUAL(lines, normalize_check_line(in_lines));
+        TEST_EQUAL(lines, normalize_receipt_line(in_lines));
     }
 }
